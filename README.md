@@ -1,7 +1,7 @@
 SRE-EVAL: A tool for evaluation of semantic similarity measures
 ===============================================================
 
-This directory contains data and scripts for evaluation of similarity measures used for semantic relation extraction. This script performs two kinds of evaluation: correlations with human judgements and semantic relation ranking. 
+This repository contains data and scripts for evaluation of similarity measures. The script performs two kinds of evaluation: correlations with human judgements and semantic relation ranking. 
 
 The evaluation procedure relies on two types of ground truth datasets: human judgments about semantic similarity and manually crafted semantic relations. This procedure reuses 4 common openly available datasets MC (Miller and Charles, 91), RG (Rubenstein and Goodenougth, 1965), WordSim353 (Finkelstein et al., 2001), BLESS (Baroni and Lenci, 2011). Rights on these data belong to their corresponding authors please consult the listed above references for terms of use of these data. 
 
