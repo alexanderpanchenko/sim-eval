@@ -1,4 +1,4 @@
-SRE-EVAL: A TOOL FOR EVALUATION OF SEMANTIC SIMILARITY MEASURES 
+SRE-EVAL: A tool for evaluation of semantic similarity measures
 ===============================================================
 
 This directory contains data and scripts for evaluation of similarity measures used for semantic relation extraction. This script performs two kinds of evaluation: correlations with human judgements and semantic relation ranking. 
@@ -10,8 +10,9 @@ Human Judgements Datasets
 
 The first type of ground truth datasets is a set of tuples <c_i, c_j, s_ij>, where c_i, c_j are terms, and s_ij is their similarity obtained from by human judgment. The quality of a measure here is assessed with Pearson and Spearman's correlation between the similarity scores of humans and a measure. This evaluation directly assesses performance of the measure and indirectly assesses quality of relation extraction with the measure. We use three standard human judgments datasets MC (Miller and Charles, 91), RG (Rubenstein and Goodenougth, 1965) and WordSim353 (Finkelstein et al., 2001) composed of  30, 65, and 353 pairs of terms respectively.
 
-===========================
+
 Semantic Relations Datasets
+-------------------------
 
 The second type of ground truth are semantic relations $R$, such as <agitator, synonym, activist>, <dishwasher, cohyponym, reezer>, <hawk , hypernym, predator>, and <gun, synonym,weapon>. Each "target" term has roughly the same number of meaningful and random relations. This type of datasets indirectly assesses performance of a
 measure, and directly assesses relation extraction with the measure.
@@ -23,12 +24,11 @@ We use two semantic relation datasets: BLESS (Baroni and Lenci, 2001), and SN. T
 We built the SN (Semantic Neighbors) dataset in order to complement the BLESS, because the latter contains no synonyms. SN relates 462 target terms (nouns) to 5910 relatum terms with 14682 semantic relations (7341 are meaningful and 7341 are random).  The SN contains synonyms coming from three sources: WordNet (Miller, 1995), Roget's (Kennedy, 2004), and a synonyms database (http://synonyms-database.downloadaces.com/).
 
 
-===========================================================
-ORGANIZATION OF THE DIRECTORY 
-===========================================================
+Organization of the directory
+=============================
 
-===
-SRC
+src
+---
 
 This directory contains sources of MATLAB scripts which perform evaluation of a similarity measure performance. The main function is evaluate_measure.m. Examples of use are provided in sample_1.m and sample_2.m files. Please consider that the scripts are not optimized. 
 
