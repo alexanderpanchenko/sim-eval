@@ -65,7 +65,7 @@ In order to evaluate a new similarity measure you need to create a new directory
 Contact
 =======
 
-For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@student.uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium. August, 2012.
+For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium. August, 2012.
 
 
 References
