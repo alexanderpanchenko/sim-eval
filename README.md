@@ -1,4 +1,3 @@
-
 SRE-EVAL: A TOOL FOR EVALUATION OF SEMANTIC SIMILARITY MEASURES 
 ===============================================================
 
@@ -6,8 +5,8 @@ This directory contains data and scripts for evaluation of similarity measures u
 
 The evaluation procedure relies on two types of ground truth datasets: human judgments about semantic similarity and manually crafted semantic relations. This procedure reuses 4 common openly available datasets MC (Miller and Charles, 91), RG (Rubenstein and Goodenougth, 1965), WordSim353 (Finkelstein et al., 2001), BLESS (Baroni and Lenci, 2011). Rights on these data belong to their corresponding authors please consult the listed above references for terms of use of these data. 
 
--------------------------
 Human Judgements Datasets
+-------------------------
 
 The first type of ground truth datasets is a set of tuples <c_i, c_j, s_ij>, where c_i, c_j are terms, and s_ij is their similarity obtained from by human judgment. The quality of a measure here is assessed with Pearson and Spearman's correlation between the similarity scores of humans and a measure. This evaluation directly assesses performance of the measure and indirectly assesses quality of relation extraction with the measure. We use three standard human judgments datasets MC (Miller and Charles, 91), RG (Rubenstein and Goodenougth, 1965) and WordSim353 (Finkelstein et al., 2001) composed of  30, 65, and 353 pairs of terms respectively.
 
