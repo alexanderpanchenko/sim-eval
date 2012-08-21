@@ -8,7 +8,7 @@
 clc 
 
 % Full path to the measure which is evaluated
-MEASURE = strcat(norm_path(pwd),'./../measures/sample-with-output/');
+MEASURE = strcat(norm_path(pwd),'/../measures/sample-with-output/');
 
 % The default use of the evaluation script
 tic
