@@ -62,10 +62,10 @@ In order to evaluate a new similarity measure you need to create a new directory
 
 Quick Start 
 ===========
-1) Open MATLAB
-2) Change to directory "src"
-3) Open "sample_1.m" or "sample_2.m" script
-4) Run it. The evaluation scores will be printed to the standard output. Additional information will be saved in the directory with the measure scores (e.g. "measures/sample") 
+1. Open MATLAB
+2. Change to directory "src"
+3. Open "sample_1.m" or "sample_2.m" script
+4. Run it. The evaluation scores will be printed to the standard output. Additional information will be saved in the directory with the measure scores (e.g. "measures/sample") 
 
 Contact
 =======
