@@ -1,4 +1,4 @@
-SRE-EVAL: A tool for evaluation of semantic similarity measures
+sim-eval: A tool for evaluation of semantic similarity measures
 ===============================================================
 
 This repository contains data and scripts for evaluation of similarity measures. The script performs two kinds of evaluation: correlations with human judgements and semantic relation ranking. 
