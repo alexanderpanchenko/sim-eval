@@ -1,0 +1,65 @@
+cord;smile;0.02  ;0.02529
+rooster;voyage;0.04 ;0.0089913
+noon;string;0.04  ;0.13032
+fruit;furnace;0.05  ;0.0061527
+autograph;shore;0.06  ;0.028733
+automobile;wizard;0.11  ;0.0070531
+mound;stove;0.14;0.15217
+grin;implement;0.18;0.064942
+asylum;fruit;0.19;0.1588
+asylum;monk;0.39;0.092882
+graveyard;madhouse;0.42;0.22799
+glass;magician;0.44;0.26647
+boy;rooster;0.44;0.13889
+cushion;jewel;0.45;0.14729
+monk;slave;0.57;0
+asylum;cemetery;0.79;0.28791
+coast;forest;0.85;0.17913
+grin;lad;0.88;0.62162
+shore;woodland;0.90;0.23599
+monk;oracle;0.91;0.090022
+boy;sage;0.96;0.14584
+automobile;cushion;0.97;0.40949
+mound;shore;0.97;0.23286
+lad;wizard;0.99;0.27889
+forest;graveyard;1.00;0
+food;rooster;1.09;0.055588
+cemetery;woodland;1.18;0
+shore;voyage;1.22;0.35508
+bird;woodland;1.24;0.20246
+coast;hill;1.26;0.059251
+furnace;implement;1.37;0.12709
+crane;rooster;1.41;0.27661
+hill;woodland;1.48;0.13328
+car;journey;1.55;0.16456
+cemetery;mound;1.69;0.26254
+glass;jewel;1.78;0
+magician;oracle;1.82;0.43067
+crane;implement;2.37;0
+brother;lad;2.41;0.35702
+sage;wizard;2.46;0.12316
+oracle;sage;2.61;0.15105
+bird;crane;2.63;0.44215
+bird;cock;2.63;0.54374
+food;fruit;2.69;0.60435
+brother;monk;2.74;0.027278
+asylum;madhouse;3.04;0.18867
+furnace;stove;3.11;0.48947
+magician;wizard;3.21;0.37278
+hill;mound;3.29;0.44561
+cord;string;3.41;0.13281
+glass;tumbler;3.45;0.4837
+grin;smile;3.46;0.92935
+serf;slave;3.46;0.23322
+journey;voyage;3.58;0.689
+autograph;signature;3.59;0.097595
+coast;shore;3.60;0.65385
+forest;woodland;3.65;1
+implement;tool;3.66;0.21174
+cock;rooster;3.68;0.43028
+boy;lad;3.82;0.78888
+cushion;pillow;3.84;0.41812
+cemetery;graveyard;3.88;0.67669
+automobile;car;3.92;0.95406
+midday;noon;3.94;0.89029
+gem;jewel;3.94;0.35197
