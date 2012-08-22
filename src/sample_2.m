@@ -2,15 +2,6 @@
 % This script evaluates 35 measures at the same in a loop.
 % The script additionally saves standard output to a log file.
 
-% Paths to the input and output data
-ROOT = strcat(pwd,'/../');
-LOG = strcat(ROOT,'measures/evaluation.log');
-
-% Initialization
-clc
-delete(LOG);
-diary(LOG);
-
 % Names of subdirectories in the results directory with measures data
 % Each name corresponds to one directory
 MEASURES = {...
@@ -27,8 +18,5 @@ MEASURES = strcat(ROOT, 'measures/', MEASURES, '/');
 
 % Evaluate measures 
 for i=1:length(MEASURES)
-    evaluate_measure(MEASURES{i},100);
+    evaluate_measure(MEASURES{i},10);
 end
-
-% Close the log file
-diary off

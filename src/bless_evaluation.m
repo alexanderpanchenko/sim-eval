@@ -35,7 +35,12 @@ end
 
 % Precision-Recall curve 
 if(PR_GRAPH)
-    pr_graph(frames, output_dir, it_num, gamma);
+    if(length(frames) > 1)
+        pr_graph(frames, output_dir, it_num, gamma);
+    else if(length(frames) == 1)
+        pr_graph(frames, output_dir, it_num, gamma, ....
+            strcat('-',get_frame_name(frames{1})));
+    end
 end
 
 end

@@ -1,4 +1,4 @@
-function evaluate_measure(work_dir, it_num, gamma)
+function evaluate_measure(work_dir, it_num, plots, gamma)
 % Evaluates a single measure those data are in the working_dir: 
 % bless-frame.(mat|csv) -- BLESS dataset; a file with similarity scores "target;relatum;type;sim"
 % sn-frame.(mat|csv) -- SN dataset; a file with similarity scores target;relatum;type;sim"
@@ -8,21 +8,28 @@ function evaluate_measure(work_dir, it_num, gamma)
 %
 % The results of the evaluation are either printed to the standard output or saved in the work_dir
 
+delete(strcat(work_dir,'/scores.txt'));
+diary(strcat(work_dir,'/scores.txt'));
+
 % Parameters
 MC_EVAL = 1;
 RG_EVAL = 1;
 WORDSIM_EVAL = 1;
 BLESS_EVAL = 1;
 SN_EVAL = 1;
-BLESS23T_EVAL = 1;
+BLESS23T_EVAL = 0;
 
 % Set default parameters
-if(nargin > 3)
+if(nargin > 4)
     error('Function requires at most 3 optional inputs');
 elseif(nargin == 1)
     it_num = 20;
+    plots = 0;
     gamma = 0;
 elseif( nargin == 2)
+    plots = 0;
+    gamma = 0;
+elseif( nargin == 3)
     gamma = 0;
 end
 
@@ -49,38 +56,34 @@ if(exist(work_dir,'dir'))
     
     % Start evaluation on all found evaluation frames
     if(~strcmp(mc_file,'') && MC_EVAL)
-        print_spacer(); %fprintf('MC evaluation\n');    
-        correlation_evaluation(mc_file);    
-        print_whiteline();
+         run_correlation_eval(mc_file);
     end
     
     if(~strcmp(rg_file,'') && RG_EVAL)
-        print_spacer(); %fprintf('RG evaluation\n');
-        correlation_evaluation(rg_file);    
-        print_whiteline();
+        run_correlation_eval(rg_file);            
     end
         
     if(~strcmp(wordsim_file,'') && WORDSIM_EVAL)
-        print_spacer(); %fprintf('WordSim353 evaluation\n');
-        correlation_evaluation(wordsim_file);    
-        print_whiteline();
+        run_correlation_eval(wordsim_file);    
     end
     
     if(~strcmp(bless_file,'') && BLESS_EVAL)
-        run_bless_eval(bless_file, work_dir, it_num, gamma)
+        run_bless_eval(bless_file, work_dir, it_num, gamma, plots)
     end
             
     if(~strcmp(sn_file,'') && SN_EVAL)
-        run_bless_eval(sn_file, work_dir, it_num, gamma)
+        run_bless_eval(sn_file, work_dir, it_num, gamma, plots)
     end
     
     if(~strcmp(bless2t_file,'') && ~strcmp(bless3t_file,'') && BLESS23T_EVAL)
-        run_bless_eval(bless2t_file, work_dir, it_num, gamma);
-        run_bless_eval(bless3t_file, work_dir, it_num, gamma);
+        run_bless_eval(bless2t_file, work_dir, it_num, gamma, plots);
+        run_bless_eval(bless3t_file, work_dir, it_num, gamma, plots);
     end    
 else
     fprintf('Directory %s not found. \nThe directory should contain files bless-frame.csv, sn-frame.csv, rg-frame.csv, mc-frame.csv, wordsim-frame.csv\n', work_dir);
 end
+
+diary off
 
 end
 
@@ -88,9 +91,19 @@ function print_whiteline()
     fprintf('\n')
 end
 
-function run_bless_eval(frame_file, work_dir, it_num, gamma)
+function run_correlation_eval(frame_file)
     print_spacer();
-    bless_evaluation({frame_file}, work_dir, it_num, gamma);
+    fprintf('%s\n', frame_file);
+    correlation_evaluation(frame_file);    
+    print_whiteline();
+end
+
+function run_bless_eval(frame_file, work_dir, it_num, gamma, plots)
+    print_spacer();
+    fprintf('%s\n', frame_file);
+    if(plots)
+        bless_evaluation({frame_file}, work_dir, it_num, gamma);
+    end
     [p10, p20, p50, f50, k_p80, r_p80, f_p80, map20, map50, r50, n10, n20, n50] =...
         get_bless_scores(frame_file, it_num, gamma);
     print_bless_scores(p10, p20, p50, f50, k_p80, r_p80, f_p80, map20, map50, r50, n10, n20, n50);

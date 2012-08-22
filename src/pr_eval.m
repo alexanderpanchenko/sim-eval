@@ -50,6 +50,7 @@ plot_graph(R.fmeasure, R.t, types, par_name, 'F-Measure');
 
 % Save the plots
 saveas(h, strcat(output_dir,par_sname,'.fig'), 'fig');
+saveas(h, strcat(output_dir,par_sname,'.png'), 'png');
 close(gcf);
 %hold off;
 

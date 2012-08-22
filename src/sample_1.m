@@ -8,19 +8,22 @@
 clc 
 
 % Full path to the measure which is evaluated
-MEASURE = strcat(norm_path(pwd),'/../measures/sample-with-output/');
+MEASURE = strcat(norm_path(pwd),'/../measures/sample/');
 
-% The default use of the evaluation script
+% The default use of the evaluation script (it_num=20, no plots)
 tic
-evaluate_measure(MEASURE); % the default value it_num=20 (~2.5 minutes). 
+evaluate_measure(MEASURE);
 toc
 
+% Long, but the most precise evaluation scores 
 tic
-it_num = 10; % the fastest, but the less precise evaluation scores (~1.5 minutes)
+it_num = 100; 
 evaluate_measure(MEASURE, it_num);
 toc
 
+% Output additional plots 
 tic
-it_num = 100; % the longest, but the most precise evaluation scores (~11 min) 
-evaluate_measure(MEASURE, it_num);
+it_num = 20; 
+plots=1;
+evaluate_measure(MEASURE, it_num, plots);
 toc

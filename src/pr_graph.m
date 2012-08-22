@@ -38,6 +38,7 @@ legend();
 % Save the graph
 %first_name = get_frame_name(frame_paths{1});
 saveas(h, strcat(out_dir, 'pr-graph', id, '.fig'), 'fig');
+saveas(h, strcat(out_dir, 'pr-graph', id, '.png'), 'png');
 close(gcf);
 
 end

@@ -16,7 +16,6 @@ end
 
 % Reading the data from corr_file
 [foo1, foo2, golden_sim, sim] = textread(corr_file, '%s%s%f%f','delimiter',';');
-fprintf('%s\n', corr_file);
 
 % Normalize similarity scores
 golden_sim = norm_scores(golden_sim,'');

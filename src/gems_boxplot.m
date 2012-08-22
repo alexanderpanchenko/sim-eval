@@ -21,6 +21,7 @@ xlabel('Type of semantic relation');
 ylabel('Similarity score between target concept and its 1NN (z-score)');
 title(name);
 saveas(gcf, strcat(out_dir, 'boxplot-', name, '.fig'), 'fig');
+saveas(gcf, strcat(out_dir, 'boxplot-', name, '.png'), 'png');
 close(gcf); 
 
 % Boxplot -- binary relations
@@ -29,16 +30,19 @@ xlabel('Type of semantic relation');
 ylabel('Similarity score target concept and its 1NN (z-score)');
 title(name);
 saveas(gcf, strcat(out_dir, 'boxplot-bin-', name, '.fig'), 'fig');
+saveas(gcf, strcat(out_dir, 'boxplot-bin-', name, '.png'), 'png');
 close(gcf);
 
     
 % Statistical difference
 [p,table,stats] = anova1(zscores,types);
 saveas(gcf, strcat(out_dir, 'anova-', name, '.fig'), 'fig');
+saveas(gcf, strcat(out_dir, 'anova-', name, '.png'), 'png');
 close(gcf); 
 
 [c,m,h,gnames] = multcompare(stats,'alpha',0.01);
 saveas(gcf, strcat(out_dir, 'multcompare-', name, '.fig'), 'fig');
+saveas(gcf, strcat(out_dir, 'multcompare-', name, '.png'), 'png');
 close(gcf);
 
 end
