@@ -15,9 +15,10 @@ diary(strcat(work_dir,'/scores.txt'));
 MC_EVAL = 1;
 RG_EVAL = 1;
 WORDSIM_EVAL = 1;
-BLESS_EVAL = 1;
-SN_EVAL = 1;
-BLESS23T_EVAL = 0;
+BLESS_EVAL = 0;
+SN_EVAL = 0;
+BLESS2T_EVAL = 1;
+BLESS3T_EVAL = 1;
 
 % Set default parameters
 if(nargin > 4)
@@ -75,8 +76,11 @@ if(exist(work_dir,'dir'))
         run_bless_eval(sn_file, work_dir, it_num, gamma, plots)
     end
     
-    if(~strcmp(bless2t_file,'') && ~strcmp(bless3t_file,'') && BLESS23T_EVAL)
-        run_bless_eval(bless2t_file, work_dir, it_num, gamma, plots);
+    if(~strcmp(bless2t_file,'') && BLESS2T_EVAL)
+        run_bless_eval(bless2t_file, work_dir, it_num, gamma, plots);        
+    end    
+    
+    if(~strcmp(bless3t_file,'') && BLESS3T_EVAL)
         run_bless_eval(bless3t_file, work_dir, it_num, gamma, plots);
     end    
 else

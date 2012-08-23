@@ -1,3 +1,40 @@
+MEASURES = {...
+'corpus-bda-exact3-5000-2',...
+'corpus-sda-21-100000-2',...
+'wordnet-lesk-2',...
+'wordnet-wup-2',...
+'corpus-bda-exact5-5000-2',...
+'def-wiktionary-1000-2',...
+'wordnet-res-2',...
+'corpus-lsa-tasa-2',...
+'wordnet-lch-2',...
+'wordnet-vector_pairs-2',...
+};
+
+ROOT = '/home/sasha/tmp/measures/';
+
+it_num = 100; 
+
+tic
+for i = 1:length(MEASURES)    
+    evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num);
+end
+toc
+
+%%
+evaluate_measure(strcat(ROOT,'corpus-sda-21-100000-2/'), it_num);
+
+%%
+plots=1;
+tic
+for i = 1:length(MEASURES)
+    evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num, plots);
+end
+toc
+
+
+
+
 %% KONVENS 2012 experiments
 
 clc 
