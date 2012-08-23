@@ -15,24 +15,26 @@ ROOT = '/home/sasha/tmp/measures/';
 
 it_num = 100; 
 
+%%  Without plots
+
 tic
 for i = 1:length(MEASURES)    
     evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num);
 end
 toc
 
-%%
+%% Single
+
 evaluate_measure(strcat(ROOT,'corpus-sda-21-100000-2/'), it_num);
 
-%%
+%% With plots 
+
 plots=1;
 tic
 for i = 1:length(MEASURES)
     evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num, plots);
 end
 toc
-
-
 
 
 %% KONVENS 2012 experiments

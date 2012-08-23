@@ -15,8 +15,8 @@ diary(strcat(work_dir,'/scores.txt'));
 MC_EVAL = 1;
 RG_EVAL = 1;
 WORDSIM_EVAL = 1;
-BLESS_EVAL = 0;
-SN_EVAL = 0;
+BLESS_EVAL = 1;
+SN_EVAL = 1;
 BLESS2T_EVAL = 1;
 BLESS3T_EVAL = 1;
 
