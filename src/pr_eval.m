@@ -29,6 +29,8 @@ function plot_pr1(R, par_name, par_sname, output_dir)
 
 types = {'attri';'coord';'event';'hyper';'mero';'all'};
 
+h = figure('Visible','off');
+
 %Plot precision
 subplot(2,2,1);
 h = plot_graph(R.precision, R.t, types, par_name, 'Precision');

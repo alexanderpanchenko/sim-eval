@@ -22,7 +22,8 @@ parfor i=1:length(frame_paths)
     R{i} = calc_evaluation_scores(f, name, eval_it, min_score);
 end
 
-% Plot the graph    
+% Plot the graph   
+h = figure('Visible','off');
 hold all;
 grid on;
 for i=1:length(R)

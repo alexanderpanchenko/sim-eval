@@ -13,10 +13,11 @@ MEASURES = {...
 
 ROOT = '/home/sasha/tmp/measures/';
 
-it_num = 100; 
+
 
 %%  Without plots
 
+it_num = 100; 
 tic
 for i = 1:length(MEASURES)    
     evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num);
@@ -29,6 +30,7 @@ evaluate_measure(strcat(ROOT,'corpus-sda-21-100000-2/'), it_num);
 
 %% With plots 
 
+it_num = 20; 
 plots=1;
 tic
 for i = 1:length(MEASURES)
@@ -36,6 +38,13 @@ for i = 1:length(MEASURES)
 end
 toc
 
+it_num = 100; 
+plots=1;
+tic
+for i = 1:length(MEASURES)
+    evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num, plots);
+end
+toc
 
 %% KONVENS 2012 experiments
 

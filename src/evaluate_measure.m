@@ -37,6 +37,7 @@ end
 work_dir = norm_path(work_dir);
 % Make sure the working directory exist
 if(exist(work_dir,'dir'))
+    try
     % Get the paths to the frame files
     [bless_file, sn_file, mc_file, rg_file, wordsim_file, bless2t_file,...
         bless3t_file] = get_frames(work_dir);
@@ -83,6 +84,11 @@ if(exist(work_dir,'dir'))
     if(~strcmp(bless3t_file,'') && BLESS3T_EVAL)
         run_bless_eval(bless3t_file, work_dir, it_num, gamma, plots);
     end    
+    
+    catch exception
+        fprintf('Evaluation of the measure %s failed: %s\n',...
+            work_dir, exception.message);
+    end
 else
     fprintf('Directory %s not found. \nThe directory should contain files bless-frame.csv, sn-frame.csv, rg-frame.csv, mc-frame.csv, wordsim-frame.csv\n', work_dir);
 end

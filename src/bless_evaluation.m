@@ -10,6 +10,7 @@ function bless_evaluation(frames, output_dir, it_num, gamma)
 PR_K = 1;
 BOXPLOT = 1;
 PR_GRAPH = 1;
+ANOVA = 0;
 
 % Ensure that output directory exists
 if (exist(output_dir,'dir') <= 0)
@@ -29,7 +30,7 @@ for i=1:length(frames)
     % Vizualize sim.distribution across relation types with boxplots
     % and check significance in distributions with ANOVA
     if(BOXPLOT)
-        gems_boxplot(frames{i}, output_dir);
+        gems_boxplot(frames{i}, output_dir, ANOVA);
     end
 end
 

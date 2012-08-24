@@ -1,4 +1,4 @@
-function gems_boxplot(frame_path, out_dir)
+function gems_boxplot(frame_path, out_dir, plot_anova)
 % Perfroms an evaluation with a boxplot as suggested in the GEMS2011.
 % The boxplot represents distribution of similarity scores among the
 % different types of semantic relations. The function also generates the
@@ -16,6 +16,7 @@ types_bin = {'relation','random'};
 name = get_frame_name(frame_path);
 
 % Boxplot -- all relation types
+h = figure('Visible','off');
 boxplot(zscores,'labels',types);
 xlabel('Type of semantic relation');
 ylabel('Similarity score between target concept and its 1NN (z-score)');
@@ -25,6 +26,8 @@ saveas(gcf, strcat(out_dir, 'boxplot-', name, '.png'), 'png');
 close(gcf); 
 
 % Boxplot -- binary relations
+h = figure('Visible','off');
+figure('Visible','off');
 boxplot(scores_bin,'labels',types_bin);
 xlabel('Type of semantic relation');
 ylabel('Similarity score target concept and its 1NN (z-score)');
@@ -32,18 +35,16 @@ title(name);
 saveas(gcf, strcat(out_dir, 'boxplot-bin-', name, '.fig'), 'fig');
 saveas(gcf, strcat(out_dir, 'boxplot-bin-', name, '.png'), 'png');
 close(gcf);
-
     
 % Statistical difference
-[p,table,stats] = anova1(zscores,types);
-saveas(gcf, strcat(out_dir, 'anova-', name, '.fig'), 'fig');
-saveas(gcf, strcat(out_dir, 'anova-', name, '.png'), 'png');
-close(gcf); 
-
-[c,m,h,gnames] = multcompare(stats,'alpha',0.01);
-saveas(gcf, strcat(out_dir, 'multcompare-', name, '.fig'), 'fig');
-saveas(gcf, strcat(out_dir, 'multcompare-', name, '.png'), 'png');
-close(gcf);
+if(plot_anova)
+    [p,table,stats] = anova1(zscores,types,'off');    
+    figure('Visible','off');
+    [c,m,h,gnames] = multcompare(stats,'alpha',0.01);
+    saveas(gcf, strcat(out_dir, 'multcompare-', name, '.fig'), 'fig');
+    saveas(gcf, strcat(out_dir, 'multcompare-', name, '.png'), 'png');
+    close(gcf);
+end
 
 end
 
