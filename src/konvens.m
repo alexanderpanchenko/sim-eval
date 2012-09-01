@@ -25,18 +25,27 @@ end
 toc
 
 %% Single
-
 evaluate_measure(strcat(ROOT,'corpus-sda-21-100000-2/'), it_num);
 
-%% With plots 
+%%
+evaluate_measure('C:\cygwin\home\Alexander\tmp\measures\random\', 100, 1);
 
-it_num = 20; 
-plots=1;
-tic
-for i = 1:length(MEASURES)
-    evaluate_measure(strcat(ROOT,MEASURES{i},'/'), it_num, plots);
-end
-toc
+%% With plots 
+clc
+MEASURES = {...
+'p-norm215-all',...
+'p-norm31-all',...
+'p-norm42-conc-all',...
+'p-norm42-corpus-all',...
+'p-norm51-corpus-all',...
+'p-norm60-corpus-all',...
+'p-raw-all',...
+'p-raw-pukwac',...
+'p-raw-wacky',...
+'wordnet-vector_pairs-2',...
+};
+
+ROOT = 'C:/cygwin/home/Alexander/tmp/measures/';
 
 it_num = 100; 
 plots=1;

@@ -8,8 +8,11 @@ function evaluate_measure(work_dir, it_num, plots, gamma)
 %
 % The results of the evaluation are either printed to the standard output or saved in the work_dir
 
-delete(strcat(work_dir,'/scores.txt'));
-diary(strcat(work_dir,'/scores.txt'));
+scores = strcat(work_dir,'/scores.txt');
+if exist(scores, 'file')
+    delete(scores);
+end
+diary(scores);
 
 % Parameters
 MC_EVAL = 1;
