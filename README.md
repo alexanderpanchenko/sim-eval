@@ -63,7 +63,7 @@ In order to evaluate a new similarity measure you need to create a new directory
 Requirements
 ===========
 
-- Matlab 2011 or higher. Normally, the scripts should work on prior version, but I did not do the tests.
+- Matlab 2011 or higher. Normally, the scripts should work on the prior versions of Matlab, but I did test it.
 - Statistics Toolbox (http://www.mathworks.nl/products/statistics/)
 
 Quick Start 
