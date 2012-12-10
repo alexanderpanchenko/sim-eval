@@ -76,8 +76,14 @@ Quick Start
 Contact
 =======
 
-For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium. August, 2012.
+For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium.
 
+Related Resources
+================
+
+* Comparison of the baseline similarity measures with these scripts: http://cental.fltr.ucl.ac.be/team/~panchenko/sim-eval/
+* Semantic similarity measure "PatternSim": https://github.com/cental/patternsim
+* A lexico-semantic search engine "Serelex" based on the "PatternSim" measure: http://serelex.cental.be/ 
 
 References
 ==========
