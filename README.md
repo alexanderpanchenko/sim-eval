@@ -62,6 +62,12 @@ In order to evaluate a new similarity measure you need to create a new directory
 
 More measures can be downloaded from http://cental.fltr.ucl.ac.be/team/~panchenko/sim-eval/measures.tgz. For details see http://cental.fltr.ucl.ac.be/team/~panchenko/sim-eval/.
 
+Requirements
+===========
+
+- Matlab 2011 or higher. Normally, the scripts should work on the prior versions of Matlab, but I did test it.
+- Statistics Toolbox (http://www.mathworks.nl/products/statistics/)
+
 Quick Start 
 ===========
 1. Open MATLAB
@@ -72,8 +78,14 @@ Quick Start
 Contact
 =======
 
-For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium. August, 2012.
+For any question concerining this evaluation script please write to Alexander Panchenko (alexander.panchenko@uclouvain.be). Center for Natural Language Processing (CENTAL), Université catholique de Louvain, Belgium.
 
+Related Resources
+================
+
+* Comparison of the baseline similarity measures with these scripts: http://cental.fltr.ucl.ac.be/team/~panchenko/sim-eval/
+* Semantic similarity measure "PatternSim": https://github.com/cental/patternsim
+* A lexico-semantic search engine "Serelex" based on the "PatternSim" measure: http://serelex.cental.be/ 
 
 References
 ==========
